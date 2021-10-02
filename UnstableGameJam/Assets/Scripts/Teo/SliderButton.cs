@@ -12,6 +12,9 @@ public class SliderButton : MonoBehaviour
     public float sliderNumber;
     public Text sliderNumberText;
     public Text randomText;
+    public GameObject led;
+    public Sprite greenLed;
+    public Sprite redLed;
 
     private void PickRandomNumbe(int maxInt)
     {
@@ -30,6 +33,7 @@ public class SliderButton : MonoBehaviour
     {
         if (isToActivate)
         {
+            led.GetComponent<Image>().sprite = redLed;
             StartCoroutine(limitTime());
             sliderNumber = sliderButton.value;
             randomText.text = rdmNumber.ToString();
@@ -37,6 +41,7 @@ public class SliderButton : MonoBehaviour
         }
         else
         {
+            led.GetComponent<Image>().sprite = greenLed;
             sliderButton.value = 0;
             sliderNumberText.text = "0";
             randomText.text = "0";
@@ -49,14 +54,13 @@ public class SliderButton : MonoBehaviour
             if (sliderNumber == rdmNumber)
             {
                 Debug.Log("Gagner !");
+                this.GetComponent<Slider>().enabled = false;
+
             }
         }
         else
         {
             Debug.Log("Fallait pas appuyer !");
-            sliderButton.value = 0;
-            sliderNumberText.text = "0";
-            randomText.text = "0";
         }
     }
    IEnumerator limitTime()
@@ -65,10 +69,12 @@ public class SliderButton : MonoBehaviour
         if (isToActivate)
         {
             isToActivate = false;
+            //Destroy(this);
         }
         else
         {
             Debug.Log("Gagner");
         }
+        //this.GetComponent<Slider>().enabled = true;
     }
 }
