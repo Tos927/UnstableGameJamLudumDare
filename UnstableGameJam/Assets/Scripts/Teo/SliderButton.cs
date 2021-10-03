@@ -10,13 +10,17 @@ public class SliderButton : MonoBehaviour
 
     public int rdmNumber;
     public float sliderNumber;
+
     public Text sliderNumberText;
     public Text randomText;
     public GameObject led;
     public Sprite greenLed;
     public Sprite redLed;
 
-    private void PickRandomNumbe(int maxInt)
+    private bool wait2Seconds = false;
+    private bool processing = false;
+
+    private void PickRandomNumber(int maxInt)
     {
         int numberToDo = Random.Range(1, maxInt + 1);
         rdmNumber = numberToDo;
@@ -24,57 +28,88 @@ public class SliderButton : MonoBehaviour
 
     public void Start()
     {
-        PickRandomNumbe(10);
         Debug.Log(rdmNumber);
-        randomText.text = rdmNumber.ToString();
+        randomText.text = "0";
     }
 
     public void Update()
     {
+        sliderNumber = sliderButton.value;
+
         if (isToActivate)
         {
-            led.GetComponent<Image>().sprite = redLed;
-            StartCoroutine(limitTime());
-            sliderNumber = sliderButton.value;
-            randomText.text = rdmNumber.ToString();
-            sliderNumberText.text = sliderNumber.ToString();
+            if (led.GetComponent<Image>().sprite = greenLed)
+            {
+                led.GetComponent<Image>().sprite = redLed;
+                StartCoroutine(limitTime());
+                randomText.text = rdmNumber.ToString();
+                sliderNumberText.text = sliderNumber.ToString();
+            }
+            if (rdmNumber == 0)
+            {
+                PickRandomNumber(10);
+            }
+
+            activation();
+        }
+        else if (!isToActivate && sliderNumber != rdmNumber && sliderNumber != 0)
+        {
+            Debug.Log("mort");
+            isToActivate = false;
         }
         else
         {
             led.GetComponent<Image>().sprite = greenLed;
-            sliderButton.value = 0;
             sliderNumberText.text = "0";
             randomText.text = "0";
         }
     }
-    public void Activation()
+    public void activation()
     {
-        if (isToActivate)
-        {
-            if (sliderNumber == rdmNumber)
-            {
-                Debug.Log("Gagner !");
-                this.GetComponent<Slider>().enabled = false;
 
+        if (sliderNumber == rdmNumber)
+        {
+            if (!processing)
+            {
+                StartCoroutine(checkTime());
+            }
+
+            if (wait2Seconds)
+            {
+                isToActivate = false;
+                wait2Seconds = false;
+                processing = false;
+                sliderButton.value = 0;
+                rdmNumber = 0;
+                Debug.Log("Gagner !");
             }
         }
-        else
-        {
-            Debug.Log("Fallait pas appuyer !");
-        }
     }
-   IEnumerator limitTime()
+    IEnumerator checkTime()
     {
-        yield return new WaitForSeconds(3);
+        processing = true;
+        yield return new WaitForSeconds(2);
+
+        if (sliderNumber == rdmNumber)
+        {
+            wait2Seconds = true;
+        }
+        processing = false;
+    }
+    IEnumerator limitTime()
+    {
+        yield return new WaitForSeconds(6);
         if (isToActivate)
         {
-            isToActivate = false;
-            //Destroy(this);
+            Debug.Log("u r dead lulz");
         }
         else
         {
-            Debug.Log("Gagner");
+            Debug.Log("task good");
+            if (sliderButton.value != 0)
+            {
+                sliderButton.value = 0;
+            }
         }
-        //this.GetComponent<Slider>().enabled = true;
     }
 }
