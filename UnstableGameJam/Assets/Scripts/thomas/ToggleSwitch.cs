@@ -69,9 +69,7 @@ public class ToggleSwitch : MonoBehaviour
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
-            //isToActivate = false;
-            Destroy(this);
-            //this.enabled = false;
+            
 
         }
         else
