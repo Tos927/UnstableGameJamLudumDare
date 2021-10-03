@@ -16,7 +16,7 @@ public class ButtonSpam : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 3;
+    private int timeBeforeGameOver = 5;
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class ButtonSpam : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ButtonToSpam doesn't work or isn't activated");
+            Debug.Log("mort par boutton spam");
         }
     }
 
@@ -61,8 +61,8 @@ public class ButtonSpam : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
-
+            Debug.Log("mort par boutton spam");
+            GameManager.instance.loose = true;
             GameTimer.playing = false;
         }
         else

@@ -18,7 +18,7 @@ public class ButtonDelay : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 3;
+    private int timeBeforeGameOver = 10;
 
     private bool isActive = false;
 
@@ -52,9 +52,10 @@ public class ButtonDelay : MonoBehaviour
                 StartCoroutine(Press2Times());
             }
         }
-        else
+        else   
         {
-            Debug.LogError("ButtonToPress2Times doesn't work or isn't activated");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par bouton delay");
         }
     }
 
@@ -84,8 +85,8 @@ public class ButtonDelay : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
-
+            Debug.Log("mort par bouton delay");
+            GameManager.instance.loose = true;
             GameTimer.playing = false;
         }
         else

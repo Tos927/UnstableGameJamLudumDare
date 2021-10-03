@@ -44,7 +44,8 @@ public class SliderLever : MonoBehaviour
         }
         else if (!isToActivate && sliderNumber != max && sliderNumber != min)//si le joueur bouge le slider alors qu'il ne doit pas alors il perd
         {
-            Debug.Log("mort");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par slider lever");
         }
         else//sinon la led est verte
         {
@@ -73,10 +74,11 @@ public class SliderLever : MonoBehaviour
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(7);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par slider lever");
         }
         else
         {

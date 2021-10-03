@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public GameObject gameOverScreen;
+
+
+
     public static GameManager instance;
     public GameObject pressButton;
     public GameObject spamPressButton;
@@ -12,6 +17,9 @@ public class GameManager : MonoBehaviour
     public GameObject switchPress;
     public GameObject sliderOnNumber;
     public GameObject sliderlever;
+
+    
+
     public bool[] tabl;
     public int randomIndex;
     public bool ischoosin;
@@ -66,6 +74,7 @@ public class GameManager : MonoBehaviour
         }
         if(loose)
         {
+            gameOverScreen.SetActive(true);
             Debug.Log("perdu__________________");
         }
     }

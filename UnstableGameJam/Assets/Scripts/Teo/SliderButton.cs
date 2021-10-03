@@ -54,7 +54,7 @@ public class SliderButton : MonoBehaviour
         }
         else if (!isToActivate && sliderNumber != rdmNumber && sliderNumber != 0)
         {
-            Debug.Log("mort");
+            Debug.Log("mort par sliderbouton");
             isToActivate = false;
         }
         else
@@ -98,10 +98,11 @@ public class SliderButton : MonoBehaviour
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(10);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par sliderbouton");
         }
         else
         {

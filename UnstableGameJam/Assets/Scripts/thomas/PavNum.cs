@@ -13,6 +13,7 @@ public class PavNum : MonoBehaviour
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
+    
     void Start()
     {
         nextButton = 0;
@@ -51,7 +52,8 @@ public class PavNum : MonoBehaviour
         }
         else
         {
-            Debug.Log("dumb ass shit");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par pavnume");
         }
     }
     void Update()
@@ -74,10 +76,10 @@ public class PavNum : MonoBehaviour
 
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
+            Debug.Log("mort par pavnume");
             GameManager.instance.loose = true;
 
         }
