@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MAIN MENU
+  m_Text: RETRY
 --- !u!1 &1600530098746821824
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1600530098746831677}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5152673741277161401}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: Quite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1600530098779341422
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +223,7 @@ GameObject:
   - component: {fileID: 1600530098779341417}
   - component: {fileID: 1600530098779341419}
   - component: {fileID: 1600530098779341416}
+  - component: {fileID: 5152673741277161401}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -278,6 +291,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5152673741277161401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600530098779341422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7018668f1b8e94a4b9f9377124db3284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1600530099282775493
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +502,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1600530099421515929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5152673741277161401}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1600530099919615470
 GameObject:
   m_ObjectHideFlags: 0

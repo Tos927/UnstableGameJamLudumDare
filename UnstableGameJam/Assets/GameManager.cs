@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     
 
     public bool[] tabl;
-    public int randomIndex;
+    public int randomIndex = -1;
     public bool ischoosin;
     public bool boll;
     public bool loose;
@@ -34,10 +34,14 @@ public class GameManager : MonoBehaviour
             return;
 
         }
-
+        
         instance = this;
+        randomIndex = -1;
     }
-
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     void Update()
     {
         if (!ischoosin)
@@ -76,6 +80,7 @@ public class GameManager : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
             Debug.Log("perdu__________________");
+            Time.timeScale = 0;
         }
     }
     IEnumerator randtest()
