@@ -10,6 +10,10 @@ public class SliderButton : MonoBehaviour
 
     public int rdmNumber;
     public float sliderNumber;
+
+    //public int needingTime = 2;
+    //public int timePassed = 0;
+
     public Text sliderNumberText;
     public Text randomText;
     public GameObject led;
@@ -26,54 +30,66 @@ public class SliderButton : MonoBehaviour
     {
         PickRandomNumbe(10);
         Debug.Log(rdmNumber);
-        randomText.text = rdmNumber.ToString();
+        randomText.text = "0";
     }
 
     public void Update()
     {
+        sliderNumber = sliderButton.value;
+
         if (isToActivate)
         {
-            led.GetComponent<Image>().sprite = redLed;
-            StartCoroutine(limitTime());
-            sliderNumber = sliderButton.value;
-            randomText.text = rdmNumber.ToString();
-            sliderNumberText.text = sliderNumber.ToString();
+            if (led.GetComponent<Image>().sprite = greenLed)
+            {
+                led.GetComponent<Image>().sprite = redLed;
+                StartCoroutine(limitTime());
+                randomText.text = rdmNumber.ToString();
+                sliderNumberText.text = sliderNumber.ToString();
+            }
+            activation();
+        }
+        else if (!isToActivate && sliderNumber != rdmNumber && sliderNumber != 0)
+        {
+            Debug.Log("mort");
+            isToActivate = false;
         }
         else
         {
             led.GetComponent<Image>().sprite = greenLed;
-            sliderButton.value = 0;
             sliderNumberText.text = "0";
             randomText.text = "0";
         }
     }
-    public void Activation()
+    public void activation()
     {
-        if (isToActivate)
+        //StartCoroutine(checkTime());
+        if (sliderNumber == rdmNumber) //&& timePassed == needingTime)
         {
-            if (sliderNumber == rdmNumber)
-            {
-                Debug.Log("Gagner !");
-                this.GetComponent<Slider>().enabled = false;
-            }
-        }
-        else
-        {
-            Debug.Log("Fallait pas appuyer !");
+            isToActivate = false;
+            Debug.Log("Gagner !");
         }
     }
-   IEnumerator limitTime()
+    /*IEnumerator checkTime()
+    {
+        yield return new WaitForSeconds(2);
+        timePassed = 2;
+
+    }*/
+    IEnumerator limitTime()
     {
         yield return new WaitForSeconds(3);
         if (isToActivate)
         {
+            Debug.Log("u r dead lulz");
             isToActivate = false;
-            //Destroy(this);
+            sliderButton.value = 0;
         }
         else
         {
-            Debug.Log("Gagner");
+            Debug.Log("task good");
+            sliderButton.value = 0;
         }
-        //this.GetComponent<Slider>().enabled = true;
+
     }
+
 }

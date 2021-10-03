@@ -59,7 +59,7 @@ public class SliderLever : MonoBehaviour
             isToActivate = false;
             Debug.Log("c'est bon?");
         }
-        if (sliderNumber == max) //si le slider est deja sur la valeur la plus petite alors on luis dit d'aller sur 0
+        if (sliderNumber == max)//si le slider est deja sur la valeur la plus petite alors on luis dit d'aller sur 0
         {
             target = min;
             Debug.Log("min min");
