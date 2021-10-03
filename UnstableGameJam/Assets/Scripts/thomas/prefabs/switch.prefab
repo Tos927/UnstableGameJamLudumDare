@@ -186,13 +186,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8360a02a44a4ace4e98dd50fd2646ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isToActivate: 0
+  isToActivate: 1
   switchState: 1
   switchBtn: {fileID: 5039502753930154266}
   pressed1: {fileID: 21300000, guid: c8b45d76e6c8c5246a238ce45a2116b0, type: 3}
   led: {fileID: 5039502753510218153}
-  redLed: {fileID: 21300000, guid: 284746a97c000d8448606ae841a46809, type: 3}
-  greenLed: {fileID: 21300000, guid: b64dd4ed97acd314f9a6132d28c7e75d, type: 3}
+  redLed: {fileID: 21300000, guid: 3eae2f50f606ae046aa311ebc1497e31, type: 3}
+  greenLed: {fileID: 21300000, guid: f8bde5eab5e9d224e981b5f5efc392f7, type: 3}
 --- !u!1 &5039502753510218153
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 5039502753510218156}
   - component: {fileID: 5039502753510218155}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Led
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,17 +218,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039502753510218153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0011896939, w: 0.9999993}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5039502753574262429}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.136}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 217.2, y: 283.3}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 141.41565, y: 253.42578}
+  m_SizeDelta: {x: 161.1719, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5039502753510218156
 CanvasRenderer:
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b64dd4ed97acd314f9a6132d28c7e75d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76d1873a794951f479a8a219ee3c4b30, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
