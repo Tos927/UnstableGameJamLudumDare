@@ -15,8 +15,8 @@ public class ButtonPression : MonoBehaviour
     [SerializeField]
     private Image diod;
 
-    [SerializeField]
-    private int timeBeforeGameOver = 5;
+    
+    public int timeBeforeGameOver = 10;
 
     private void Start()
     {
