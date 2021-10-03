@@ -369,8 +369,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1909980433}
-  - {fileID: 621810404}
   - {fileID: 988141451}
+  - {fileID: 621810404}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -406,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1095166672545219302, guid: 1418ee6049255d743b5523f7b7ebcdfa, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1095166672545219302, guid: 1418ee6049255d743b5523f7b7ebcdfa, type: 3}
       propertyPath: m_AnchorMax.x
@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6337487961468416107, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6337487961468416107, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -555,15 +555,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6337487961468416107, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6337487961468416107, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6337487961468416107, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6337487961468416107, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -588,6 +588,10 @@ PrefabInstance:
     - target: {fileID: 6337487961468416108, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
       propertyPath: m_Name
       value: ScreenPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337487961468416108, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa5c5e0030f7c04d81c92932d1303e7, type: 3}
