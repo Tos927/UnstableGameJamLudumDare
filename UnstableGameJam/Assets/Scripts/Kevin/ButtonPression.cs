@@ -57,6 +57,8 @@ public class ButtonPression : MonoBehaviour
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
+
+            GameTimer.playing = false;
         }
         else
         {
