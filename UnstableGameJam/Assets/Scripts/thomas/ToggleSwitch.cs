@@ -24,14 +24,17 @@ public class ToggleSwitch : MonoBehaviour
     {
         if (isToActivate)
         {
-            led.GetComponent<Image>().sprite = redLed;
-            StartCoroutine(limitTime());
-            //Debug.Log("led en rouge ");
+            if (led.GetComponent<Image>().sprite = greenLed)
+            {
+                led.GetComponent<Image>().sprite = redLed;
+                StartCoroutine(limitTime());
+                Debug.Log("led en rouge ");
+            }
         }
         else
         {
             led.GetComponent<Image>().sprite = greenLed;
-            //Debug.Log("led en vert ");
+            Debug.Log("led en vert ");
         }
 
 
@@ -66,10 +69,15 @@ public class ToggleSwitch : MonoBehaviour
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
+            //isToActivate = false;
+            Destroy(this);
+            //this.enabled = false;
+
         }
         else
         {
             Debug.Log("task good!");
+            
         }
     }
 
