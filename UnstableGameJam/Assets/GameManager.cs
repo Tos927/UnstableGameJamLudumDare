@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject twoPressButton;
     public GameObject pavNumerique;
     public GameObject switchPress;
+    public GameObject sliderOnNumber;
+    public GameObject sliderlever;
     public bool[] tabl;
     public int randomIndex;
     public bool ischoosin;
@@ -41,6 +43,12 @@ public class GameManager : MonoBehaviour
                 case 4:
                     switchPress.GetComponent<ToggleSwitch>().isToActivate = true;
                     break;
+                case 5:
+                    sliderOnNumber.GetComponent<SliderButton>().isToActivate = true;
+                    break;
+                case 6:
+                    sliderlever.GetComponent<SliderLever>().isToActivate = true;
+                    break;
                 default:
                     Debug.Log("pas d'autre rand");
                     break;
@@ -57,7 +65,7 @@ public class GameManager : MonoBehaviour
     void RandIndex()
     {
        
-        randomIndex = Random.Range(0, 5);
+        randomIndex = Random.Range(0, 7);
         
         Debug.Log(randomIndex);
         //tabl[randomIndex] = true;
