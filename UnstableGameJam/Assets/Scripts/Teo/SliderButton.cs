@@ -55,7 +55,6 @@ public class SliderButton : MonoBehaviour
             {
                 Debug.Log("Gagner !");
                 this.GetComponent<Slider>().enabled = false;
-
             }
         }
         else
