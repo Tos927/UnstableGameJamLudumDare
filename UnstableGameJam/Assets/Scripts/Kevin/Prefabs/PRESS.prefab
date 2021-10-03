@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isToActivate: 0
-  workingLED: {fileID: 21300000, guid: 7861b06089f7a4444941aef446a25749, type: 3}
-  errorLED: {fileID: 21300000, guid: 3dfc24dde3d908843a8e82d47dc1fb01, type: 3}
+  workingLED: {fileID: 21300000, guid: f8bde5eab5e9d224e981b5f5efc392f7, type: 3}
+  errorLED: {fileID: 21300000, guid: 3eae2f50f606ae046aa311ebc1497e31, type: 3}
   diod: {fileID: 4479586420061959435}
   timeBeforeGameOver: 3
 --- !u!114 &4479586418102291573
@@ -265,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 189, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 172.2, y: 4.5}
+  m_SizeDelta: {x: 159.7606, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4479586420061959434
 CanvasRenderer:
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7861b06089f7a4444941aef446a25749, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76d1873a794951f479a8a219ee3c4b30, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
