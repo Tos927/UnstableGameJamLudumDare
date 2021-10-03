@@ -11,8 +11,8 @@ public class SliderButton : MonoBehaviour
     public int rdmNumber;
     public float sliderNumber;
 
-    //public int needingTime = 2;
-    //public int timePassed = 0;
+    public int needingTime = 2;
+    public int timePassed = 0;
 
     public Text sliderNumberText;
     public Text randomText;
@@ -62,19 +62,22 @@ public class SliderButton : MonoBehaviour
     }
     public void activation()
     {
-        //StartCoroutine(checkTime());
-        if (sliderNumber == rdmNumber) //&& timePassed == needingTime)
+        if (sliderNumber == rdmNumber)
         {
-            isToActivate = false;
-            Debug.Log("Gagner !");
+            StartCoroutine(checkTime());
+            if (timePassed == needingTime)
+            {
+                isToActivate = false;
+                Debug.Log("Gagner !");
+            }
         }
     }
-    /*IEnumerator checkTime()
+    IEnumerator checkTime()
     {
         yield return new WaitForSeconds(2);
         timePassed = 2;
 
-    }*/
+    }
     IEnumerator limitTime()
     {
         yield return new WaitForSeconds(3);
