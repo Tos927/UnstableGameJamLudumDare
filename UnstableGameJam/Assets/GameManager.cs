@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //pleind e varaibale game object 
+    public static GameManager instance;
     public GameObject pressButton;
     public GameObject spamPressButton;
     public GameObject twoPressButton;
@@ -16,8 +16,18 @@ public class GameManager : MonoBehaviour
     public int randomIndex;
     public bool ischoosin;
     public bool boll;
+    public bool loose;
     void Start()
     {
+        
+        if (instance != null)
+        {
+            Debug.Log("il y a plus de une instance de Game manager");
+            return;
+
+        }
+
+        instance = this;
     }
 
     void Update()
@@ -53,6 +63,10 @@ public class GameManager : MonoBehaviour
                     Debug.Log("pas d'autre rand");
                     break;
             }
+        }
+        if(loose)
+        {
+            Debug.Log("perdu__________________");
         }
     }
     IEnumerator randtest()

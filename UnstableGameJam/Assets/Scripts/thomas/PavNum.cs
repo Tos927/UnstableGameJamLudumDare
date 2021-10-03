@@ -45,6 +45,7 @@ public class PavNum : MonoBehaviour
             {
                 nextButton = 0;
                 Debug.Log("taskgood");
+                randomize();
                 isToActivate = false;
             }
         }
@@ -77,6 +78,7 @@ public class PavNum : MonoBehaviour
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
+            GameManager.instance.loose = true;
 
         }
         else
