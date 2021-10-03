@@ -15,6 +15,11 @@ public class SliderLever : MonoBehaviour
 
     public float maxToReach = 10;
 
+    // Je sais pas trop ce qui ne va pas, mais de ce qui va:
+    // quand !isToActivate le slider ne bouge paset renvoit "Fallait pas appuyer !",
+    // la led s'active quand isToActivate l'est et se desactive quand il ne l'est plus.
+    // Mais je sais pas pourquoi le if (sliderNumber == maxToReach) à des problèmes.
+
     void Update()
     {
         if (isToActivate)
@@ -31,10 +36,14 @@ public class SliderLever : MonoBehaviour
 
     public void Activation()
     {
-        if (isToActivate && sliderNumber == maxToReach)
+        if (isToActivate)
         {
-            Debug.Log("Well done");
-            isToActivate = false;
+            if (sliderNumber == maxToReach)
+            {
+                Debug.Log("Well done");
+                isToActivate = false;
+                //maxToReach = 0;
+            }
         }
         else
         {
@@ -49,13 +58,13 @@ public class SliderLever : MonoBehaviour
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
+            //maxToReach = Mathf.Abs(maxToReach - 10);
             isToActivate = false;
-            sliderLever.value = 0;
+            //sliderLever.value = 0;
         }
         else
         {
-            Debug.Log("task good!");
+            //Debug.Log("task good!");
         }
     }
-
 }
