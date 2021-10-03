@@ -7,64 +7,82 @@ public class SliderLever : MonoBehaviour
 {
     public bool isToActivate;
     public Slider sliderLever;
-    public float sliderNumber;
+    public float sliderNumber ;
 
     public GameObject led;
     public Sprite greenLed;
     public Sprite redLed;
 
-    public float maxToReach = 10;
+    public float target;
+    public float max = 10;
+    public float min = 0;
 
     // Je sais pas trop ce qui ne va pas, mais de ce qui va:
     // quand !isToActivate le slider ne bouge paset renvoit "Fallait pas appuyer !",
     // la led s'active quand isToActivate l'est et se desactive quand il ne l'est plus.
     // Mais je sais pas pourquoi le if (sliderNumber == maxToReach) à des problèmes.
 
-    void Update()
+    private void Start()
     {
-        if (isToActivate)
+            target = max;//met la target au max
+
+    }
+
+    private void Update()
+    {
+        sliderNumber = sliderLever.value;//attribue la valeur du slide a chaque frames
+
+        if (isToActivate)//si il faut agir sur la task
         {
-            led.GetComponent<Image>().sprite = redLed;
-            sliderNumber = sliderLever.value;
-            StartCoroutine(limitTime());
+            if (led.GetComponent<Image>().sprite = greenLed)//si le sprite de la led est vert
+            {
+                led.GetComponent<Image>().sprite = redLed;//alors on met en rouge
+                StartCoroutine(limitTime());//et on lance la couroutine
+                
+            }
+            slidercount();//a chaque frame on lance la fonction qui check la veleur du slider
         }
-        else
+        else if (!isToActivate && sliderNumber != max && sliderNumber != min)//si le joueur bouge le slider alors qu'il ne doit pas alors il perd
+        {
+            Debug.Log("mort");
+        }
+        else//sinon la led est verte
         {
             led.GetComponent<Image>().sprite = greenLed;
         }
+        
     }
-
-    public void Activation()
+    public void slidercount()
     {
-        if (isToActivate)
+        if (sliderNumber == target)//si la valeur du slider est égal a la target alors c'est bon 
         {
-            if (sliderNumber == maxToReach)
-            {
-                Debug.Log("Well done");
-                isToActivate = false;
-                //maxToReach = 0;
-            }
+            isToActivate = false;
+            Debug.Log("c'est bon?");
         }
-        else
+        if (sliderNumber == max) //si le slider est deja sur la valeur la plus petite alors on luis dit d'aller sur 0
         {
-            Debug.Log("Fallait pas appuyer !");
-            sliderLever.value = 0;
+            target = min;
+            Debug.Log("min min");
         }
+        else if (sliderNumber == min)//si le slider est deja sur la valeur la plus grande alors on luis dit d'aller sur 10
+        {
+            target = max;
+            Debug.Log("max max");
+        }
+        
     }
-
     IEnumerator limitTime()
     {
         yield return new WaitForSeconds(3);
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
-            //maxToReach = Mathf.Abs(maxToReach - 10);
-            isToActivate = false;
-            //sliderLever.value = 0;
         }
         else
         {
-            //Debug.Log("task good!");
+            Debug.Log("task good");
         }
+       
     }
+    
 }
