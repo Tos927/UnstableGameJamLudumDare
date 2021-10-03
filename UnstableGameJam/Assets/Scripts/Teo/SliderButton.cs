@@ -11,16 +11,16 @@ public class SliderButton : MonoBehaviour
     public int rdmNumber;
     public float sliderNumber;
 
-    public int needingTime = 2;
-    public int timePassed = 0;
-
     public Text sliderNumberText;
     public Text randomText;
     public GameObject led;
     public Sprite greenLed;
     public Sprite redLed;
 
-    private void PickRandomNumbe(int maxInt)
+    private bool wait2Seconds = false;
+    private bool processing = false;
+
+    private void PickRandomNumber(int maxInt)
     {
         int numberToDo = Random.Range(1, maxInt + 1);
         rdmNumber = numberToDo;
@@ -28,7 +28,6 @@ public class SliderButton : MonoBehaviour
 
     public void Start()
     {
-        PickRandomNumbe(10);
         Debug.Log(rdmNumber);
         randomText.text = "0";
     }
@@ -46,6 +45,11 @@ public class SliderButton : MonoBehaviour
                 randomText.text = rdmNumber.ToString();
                 sliderNumberText.text = sliderNumber.ToString();
             }
+            if (rdmNumber == 0)
+            {
+                PickRandomNumber(10);
+            }
+
             activation();
         }
         else if (!isToActivate && sliderNumber != rdmNumber && sliderNumber != 0)
@@ -62,37 +66,50 @@ public class SliderButton : MonoBehaviour
     }
     public void activation()
     {
+
         if (sliderNumber == rdmNumber)
         {
-            StartCoroutine(checkTime());
-            if (timePassed == needingTime)
+            if (!processing)
+            {
+                StartCoroutine(checkTime());
+            }
+
+            if (wait2Seconds)
             {
                 isToActivate = false;
+                wait2Seconds = false;
+                processing = false;
+                sliderButton.value = 0;
+                rdmNumber = 0;
                 Debug.Log("Gagner !");
             }
         }
     }
     IEnumerator checkTime()
     {
+        processing = true;
         yield return new WaitForSeconds(2);
-        timePassed = 2;
 
+        if (sliderNumber == rdmNumber)
+        {
+            wait2Seconds = true;
+        }
+        processing = false;
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         if (isToActivate)
         {
             Debug.Log("u r dead lulz");
-            isToActivate = false;
-            sliderButton.value = 0;
         }
         else
         {
             Debug.Log("task good");
-            sliderButton.value = 0;
+            if (sliderButton.value != 0)
+            {
+                sliderButton.value = 0;
+            }
         }
-
     }
-
 }
