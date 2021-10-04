@@ -7,11 +7,14 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
+    // Empty at the begenning
     [SerializeField]
     private GameObject gameTimer;
+    // Empty at the begenning
+    [SerializeField]
+    private GameObject bestScoreText;
 
-    public GameObject bestScoreText;
-
+    //Don't change this
     public string scoreText = "00:00:00";
 
     private void Awake()
@@ -30,11 +33,21 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        gameTimer = GameObject.Find("/Main Camera/Canvas/Timer");
+        // Fetch Timer (middle) and Scoring (top/right)
+        if (gameTimer == null)
+        {
+            gameTimer = GameObject.Find("/Main Camera/Canvas/Timer");
+        }
 
-        bestScoreText = GameObject.Find("/Main Camera/Canvas/Scoring");
+        if (bestScoreText == null)
+        {
+            bestScoreText = GameObject.Find("/Main Camera/Canvas/Scoring");
+        }
 
-        bestScoreText.GetComponent<Text>().text = scoreText;
+        if (bestScoreText.GetComponent<Text>().text != scoreText)
+        {
+            bestScoreText.GetComponent<Text>().text = scoreText;
+        }
     }
 
     public void SetBestScore()
