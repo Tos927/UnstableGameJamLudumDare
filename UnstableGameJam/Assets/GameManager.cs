@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip pressed;
 
     public GameObject gameOverScreen;
 
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
         }
         if (loose)
         {
+            audioSource.PlayOneShot(pressed);
             gameOverScreen.SetActive(true);
             Debug.Log("perdu__________________");
             Time.timeScale = 0;
