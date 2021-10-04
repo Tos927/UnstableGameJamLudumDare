@@ -18,7 +18,7 @@ public class ButtonDelay : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 10;
+    private int timeBeforeGameOver = 15;
 
     private bool isActive = false;
 

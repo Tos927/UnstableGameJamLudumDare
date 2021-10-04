@@ -17,6 +17,7 @@ public class SliderLever : MonoBehaviour
     public float max = 10;
     public float min = 0;
 
+    public int timeBeforeGameOver = 20;
     // Je sais pas trop ce qui ne va pas, mais de ce qui va:
     // quand !isToActivate le slider ne bouge paset renvoit "Fallait pas appuyer !",
     // la led s'active quand isToActivate l'est et se desactive quand il ne l'est plus.
@@ -74,7 +75,7 @@ public class SliderLever : MonoBehaviour
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
             GameManager.instance.loose = true;
