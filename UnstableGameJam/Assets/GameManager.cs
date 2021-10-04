@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public GameObject gameOverScreen;
+
+
+
     public static GameManager instance;
     public GameObject pressButton;
     public GameObject spamPressButton;
@@ -12,8 +17,11 @@ public class GameManager : MonoBehaviour
     public GameObject switchPress;
     public GameObject sliderOnNumber;
     public GameObject sliderlever;
+
+    
+
     public bool[] tabl;
-    public int randomIndex;
+    public int randomIndex = -1;
     public bool ischoosin;
     public bool boll;
     public bool loose;
@@ -26,10 +34,14 @@ public class GameManager : MonoBehaviour
             return;
 
         }
-
+        
         instance = this;
+        randomIndex = -1;
     }
-
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     void Update()
     {
         if (!ischoosin)
@@ -66,7 +78,9 @@ public class GameManager : MonoBehaviour
         }
         if(loose)
         {
+            gameOverScreen.SetActive(true);
             Debug.Log("perdu__________________");
+            Time.timeScale = 0;
         }
     }
     IEnumerator randtest()

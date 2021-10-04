@@ -60,16 +60,17 @@ public class ToggleSwitch : MonoBehaviour
         }
         else
         {
-            Debug.Log("l________________________________o__________________________l");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par switch");
         }
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
-            
+            Debug.Log("mort par switch");
+            GameManager.instance.loose = true;
 
         }
         else

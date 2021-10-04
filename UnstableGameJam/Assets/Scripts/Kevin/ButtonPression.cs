@@ -16,7 +16,7 @@ public class ButtonPression : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 3;
+    private int timeBeforeGameOver = 5;
 
     private void Start()
     {
@@ -47,7 +47,8 @@ public class ButtonPression : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Button Press doesn't work or isn't activated");
+            GameManager.instance.loose = true;
+            Debug.Log("mort par boutton pression");
         }
     }
 
@@ -56,8 +57,8 @@ public class ButtonPression : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
-            Debug.Log("u r dead lulz");
-
+            Debug.Log("mort par boutton pression");
+            GameManager.instance.loose = true;
             GameTimer.playing = false;
         }
         else
