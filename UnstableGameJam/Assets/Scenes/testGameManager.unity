@@ -29416,7 +29416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a816aabaf6f57341a2c2f7dcbd85fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 
+  levelToLoad: MainMenu
   pauseMenuUI: {fileID: 1750150526}
 --- !u!114 &1622812218
 MonoBehaviour:
@@ -29445,7 +29445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540e02eef54cb5a4c9807b04da80c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 
+  levelToLoad: MainMenu
   settingsWindow: {fileID: 617797165}
 --- !u!1 &1637959824
 GameObject:
