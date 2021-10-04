@@ -9,6 +9,7 @@ public class ToggleSwitch : MonoBehaviour
     public bool isToActivate;
     public int switchState = 1;
     public GameObject switchBtn;
+    public Sprite switchSprite;
     public Sprite pressed1;
     public GameObject led;
     public Sprite redLed;
@@ -58,7 +59,7 @@ public class ToggleSwitch : MonoBehaviour
             {
                 switchState = 1;
                 Debug.Log("switch state est égale a 1");
-                switchBtn.GetComponent<Image>().sprite = null;
+                switchBtn.GetComponent<Image>().sprite = switchSprite;
                 isToActivate = false;
             }
         }
