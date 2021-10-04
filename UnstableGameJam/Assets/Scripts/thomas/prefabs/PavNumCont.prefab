@@ -662,7 +662,7 @@ MonoBehaviour:
   - {fileID: 8095621495123945627}
   - {fileID: 8095621494622303903}
   - {fileID: 8095621494697175357}
-  isToActivate: 1
+  isToActivate: 0
   led: {fileID: 8095621493390545264}
   redLed: {fileID: 21300000, guid: 3eae2f50f606ae046aa311ebc1497e31, type: 3}
   greenLed: {fileID: 21300000, guid: f8bde5eab5e9d224e981b5f5efc392f7, type: 3}
