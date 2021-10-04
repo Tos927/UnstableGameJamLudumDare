@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject sliderOnNumber;
     public GameObject sliderlever;
 
-    public float CheckingTimeSpeed = 0.25f;
+    
 
     public bool[] tabl;
     public int randomIndex = -1;
@@ -97,5 +97,7 @@ public class GameManager : MonoBehaviour
         
         Debug.Log(randomIndex);
         //tabl[randomIndex] = true;
+        
     }
+
 }

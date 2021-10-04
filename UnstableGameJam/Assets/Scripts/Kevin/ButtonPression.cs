@@ -18,16 +18,9 @@ public class ButtonPression : MonoBehaviour
     
     public int timeBeforeGameOver = 10;
 
-    //Time Before death dans while
-    private int i = 5;
-
     private void Start()
     {
         diod.sprite = workingLED;
-
-        i = timeBeforeGameOver;
-
-        StartCoroutine(limitTime());
     }
 
     void Update()
@@ -37,6 +30,8 @@ public class ButtonPression : MonoBehaviour
             if (diod.sprite == workingLED)
             {
                 diod.sprite = errorLED;
+
+                StartCoroutine(limitTime());
             }
         }
     }
@@ -53,28 +48,22 @@ public class ButtonPression : MonoBehaviour
         else
         {
             GameManager.instance.loose = true;
-            Debug.Log("mort par bouton pression");
+            Debug.Log("mort par boutton pression");
         }
     }
 
     IEnumerator limitTime()
     {
-        while (i > 0)
+        yield return new WaitForSeconds(timeBeforeGameOver);
+        if (isToActivate)
         {
-            if (!isToActivate)
-            {
-                i = timeBeforeGameOver;
-                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
-            }
-            else
-            {
-                i--;
-                yield return new WaitForSeconds(1);
-            }
+            Debug.Log("mort par boutton pression");
+            GameManager.instance.loose = true;
+            GameTimer.playing = false;
         }
-
-        Debug.Log("mort par bouton pression");
-        GameManager.instance.loose = true;
-        GameTimer.playing = false;
+        else
+        {
+            Debug.Log("task good!");
+        }
     }
 }

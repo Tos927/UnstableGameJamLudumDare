@@ -17,29 +17,19 @@ public class SliderButton : MonoBehaviour
     public Sprite greenLed;
     public Sprite redLed;
 
-    private bool waitSeconds = false;
+    private bool wait2Seconds = false;
     private bool processing = false;
-
-    [SerializeField]
-    private int timeBeforeGameOver = 5;
-
-    //Time Before death dans while
-    private int i = 5;
-
-    public void Start()
-    {
-        Debug.Log(rdmNumber);
-        randomText.text = "0";
-
-        i = timeBeforeGameOver;
-
-        StartCoroutine(limitTime());
-    }
 
     private void PickRandomNumber(int maxInt)
     {
         int numberToDo = Random.Range(1, maxInt + 1);
         rdmNumber = numberToDo;
+    }
+
+    public void Start()
+    {
+        Debug.Log(rdmNumber);
+        randomText.text = "0";
     }
 
     public void Update()
@@ -51,7 +41,7 @@ public class SliderButton : MonoBehaviour
             if (led.GetComponent<Image>().sprite = greenLed)
             {
                 led.GetComponent<Image>().sprite = redLed;
-                
+                StartCoroutine(limitTime());
                 randomText.text = rdmNumber.ToString();
                 sliderNumberText.text = sliderNumber.ToString();
             }
@@ -64,7 +54,7 @@ public class SliderButton : MonoBehaviour
         }
         else if (!isToActivate && sliderNumber != rdmNumber && sliderNumber != 0)
         {
-            Debug.Log("mort par slider bouton");
+            Debug.Log("mort par sliderbouton");
             isToActivate = false;
         }
         else
@@ -84,10 +74,10 @@ public class SliderButton : MonoBehaviour
                 StartCoroutine(checkTime());
             }
 
-            if (waitSeconds)
+            if (wait2Seconds)
             {
                 isToActivate = false;
-                waitSeconds = false;
+                wait2Seconds = false;
                 processing = false;
                 sliderButton.value = 0;
                 rdmNumber = 0;
@@ -98,33 +88,29 @@ public class SliderButton : MonoBehaviour
     IEnumerator checkTime()
     {
         processing = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         if (sliderNumber == rdmNumber)
         {
-            waitSeconds = true;
+            wait2Seconds = true;
         }
         processing = false;
     }
-
     IEnumerator limitTime()
     {
-        while (i > 0)
+        yield return new WaitForSeconds(10);
+        if (isToActivate)
         {
-            if (!isToActivate)
+            GameManager.instance.loose = true;
+            Debug.Log("mort par sliderbouton");
+        }
+        else
+        {
+            Debug.Log("task good");
+            if (sliderButton.value != 0)
             {
-                i = timeBeforeGameOver;
-                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
-            }
-            else
-            {
-                i--;
-                yield return new WaitForSeconds(1);
+                sliderButton.value = 0;
             }
         }
-
-        Debug.Log("mort par slider bouton");
-        GameManager.instance.loose = true;
-        GameTimer.playing = false;
     }
 }

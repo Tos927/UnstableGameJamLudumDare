@@ -13,27 +13,14 @@ public class PavNum : MonoBehaviour
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
-<<<<<<< HEAD
     public int timeBeforeGameOver = 20;
     
 
-=======
-
-    [SerializeField]
-    private int timeBeforeGameOver = 10;
-
-    //Time Before death dans while
-    private int i = 10;
->>>>>>> kevin/testGameplay
 
     void Start()
     {
         nextButton = 0;
         randomize();
-
-        i = timeBeforeGameOver;
-
-        StartCoroutine(limitTime());
     }
     public void randomize()
     {
@@ -69,7 +56,7 @@ public class PavNum : MonoBehaviour
         else
         {
             GameManager.instance.loose = true;
-            Debug.Log("mort par Pavé Numérique");
+            Debug.Log("mort par pavnume");
         }
     }
     void Update()
@@ -79,6 +66,7 @@ public class PavNum : MonoBehaviour
             if (led.GetComponent<Image>().sprite = greenLed)
             {
                 led.GetComponent<Image>().sprite = redLed;
+                StartCoroutine(limitTime());
                 Debug.Log("led en rouge ");
             }
         }
@@ -91,27 +79,17 @@ public class PavNum : MonoBehaviour
 
     IEnumerator limitTime()
     {
-<<<<<<< HEAD
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
-=======
-        while (i > 0)
->>>>>>> kevin/testGameplay
         {
-            if (!isToActivate)
-            {
-                i = timeBeforeGameOver;
-                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
-            }
-            else
-            {
-                i--;
-                yield return new WaitForSeconds(1);
-            }
-        }
+            Debug.Log("mort par pavnume");
+            GameManager.instance.loose = true;
 
-        Debug.Log("mort par bouton Pavé Numérique");
-        GameManager.instance.loose = true;
-        GameTimer.playing = false;
+        }
+        else
+        {
+            Debug.Log("task good!");
+
+        }
     }
 }

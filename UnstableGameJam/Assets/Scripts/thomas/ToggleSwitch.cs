@@ -13,22 +13,11 @@ public class ToggleSwitch : MonoBehaviour
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
-<<<<<<< HEAD
     public int timeBeforeGameOver = 20;
-=======
-
-    [SerializeField]
-    private int timeBeforeGameOver = 5;
-
-    //Time Before death dans while
-    private int i = 5;
->>>>>>> kevin/testGameplay
 
     void Start()
     {
-        i = timeBeforeGameOver;
-
-        StartCoroutine(limitTime());
+        
     }
 
     void Update()
@@ -38,6 +27,7 @@ public class ToggleSwitch : MonoBehaviour
             if (led.GetComponent<Image>().sprite = greenLed)
             {
                 led.GetComponent<Image>().sprite = redLed;
+                StartCoroutine(limitTime());
                 Debug.Log("led en rouge ");
             }
         }
@@ -46,6 +36,8 @@ public class ToggleSwitch : MonoBehaviour
             led.GetComponent<Image>().sprite = greenLed;
             Debug.Log("led en vert ");
         }
+
+
     }
     public void onSwitchButtonClicked()
     {
@@ -74,27 +66,20 @@ public class ToggleSwitch : MonoBehaviour
     }
     IEnumerator limitTime()
     {
-<<<<<<< HEAD
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
-=======
-        while (i > 0)
->>>>>>> kevin/testGameplay
         {
-            if (!isToActivate)
-            {
-                i = timeBeforeGameOver;
-                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
-            }
-            else
-            {
-                i--;
-                yield return new WaitForSeconds(1);
-            }
-        }
+            Debug.Log("mort par switch");
+            GameManager.instance.loose = true;
 
-        Debug.Log("mort par bouton toggle twitch");
-        GameManager.instance.loose = true;
-        GameTimer.playing = false;
+        }
+        else
+        {
+            Debug.Log("task good!");
+            
+        }
     }
+
+
+
 }
