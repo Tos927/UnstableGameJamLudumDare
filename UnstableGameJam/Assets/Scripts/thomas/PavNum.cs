@@ -82,7 +82,7 @@ public class PavNum : MonoBehaviour
             Debug.Log("led en vert ");
         }
     }
-
+    //
     IEnumerator limitTime()
     {
         while (i > 0)
