@@ -17,19 +17,29 @@ public class SliderButton : MonoBehaviour
     public Sprite greenLed;
     public Sprite redLed;
 
-    private bool wait2Seconds = false;
+    private bool waitSeconds = false;
     private bool processing = false;
 
-    private void PickRandomNumber(int maxInt)
-    {
-        int numberToDo = Random.Range(1, maxInt + 1);
-        rdmNumber = numberToDo;
-    }
+    [SerializeField]
+    private int timeBeforeGameOver = 5;
+
+    //Time Before death dans while
+    private int i = 5;
 
     public void Start()
     {
         Debug.Log(rdmNumber);
         randomText.text = "0";
+
+        i = timeBeforeGameOver;
+
+        StartCoroutine(limitTime());
+    }
+
+    private void PickRandomNumber(int maxInt)
+    {
+        int numberToDo = Random.Range(1, maxInt + 1);
+        rdmNumber = numberToDo;
     }
 
     public void Update()
@@ -41,7 +51,7 @@ public class SliderButton : MonoBehaviour
             if (led.GetComponent<Image>().sprite = greenLed)
             {
                 led.GetComponent<Image>().sprite = redLed;
-                StartCoroutine(limitTime());
+                
                 randomText.text = rdmNumber.ToString();
                 sliderNumberText.text = sliderNumber.ToString();
             }
@@ -54,7 +64,7 @@ public class SliderButton : MonoBehaviour
         }
         else if (!isToActivate && sliderNumber != rdmNumber && sliderNumber != 0)
         {
-            Debug.Log("mort par sliderbouton");
+            Debug.Log("mort par slider bouton");
             isToActivate = false;
         }
         else
@@ -74,10 +84,10 @@ public class SliderButton : MonoBehaviour
                 StartCoroutine(checkTime());
             }
 
-            if (wait2Seconds)
+            if (waitSeconds)
             {
                 isToActivate = false;
-                wait2Seconds = false;
+                waitSeconds = false;
                 processing = false;
                 sliderButton.value = 0;
                 rdmNumber = 0;
@@ -88,29 +98,33 @@ public class SliderButton : MonoBehaviour
     IEnumerator checkTime()
     {
         processing = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         if (sliderNumber == rdmNumber)
         {
-            wait2Seconds = true;
+            waitSeconds = true;
         }
         processing = false;
     }
+
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(10);
-        if (isToActivate)
+        while (i > 0)
         {
-            GameManager.instance.loose = true;
-            Debug.Log("mort par sliderbouton");
-        }
-        else
-        {
-            Debug.Log("task good");
-            if (sliderButton.value != 0)
+            if (!isToActivate)
             {
-                sliderButton.value = 0;
+                i = timeBeforeGameOver;
+                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+            }
+            else
+            {
+                i--;
+                yield return new WaitForSeconds(1);
             }
         }
+
+        Debug.Log("mort par slider bouton");
+        GameManager.instance.loose = true;
+        GameTimer.playing = false;
     }
 }

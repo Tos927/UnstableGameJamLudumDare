@@ -17,16 +17,27 @@ public class SliderLever : MonoBehaviour
     public float max = 10;
     public float min = 0;
 
+<<<<<<< HEAD
     public int timeBeforeGameOver = 20;
     // Je sais pas trop ce qui ne va pas, mais de ce qui va:
     // quand !isToActivate le slider ne bouge paset renvoit "Fallait pas appuyer !",
     // la led s'active quand isToActivate l'est et se desactive quand il ne l'est plus.
     // Mais je sais pas pourquoi le if (sliderNumber == maxToReach) à des problèmes.
+=======
+    [SerializeField]
+    private int timeBeforeGameOver = 5;
+
+    //Time Before death dans while
+    private int i = 5;
+>>>>>>> kevin/testGameplay
 
     private void Start()
     {
-            target = max;//met la target au max
+        target = max;//met la target au max
 
+        i = timeBeforeGameOver;
+
+        StartCoroutine(limitTime());
     }
 
     private void Update()
@@ -38,8 +49,6 @@ public class SliderLever : MonoBehaviour
             if (led.GetComponent<Image>().sprite = greenLed)//si le sprite de la led est vert
             {
                 led.GetComponent<Image>().sprite = redLed;//alors on met en rouge
-                StartCoroutine(limitTime());//et on lance la couroutine
-                
             }
             slidercount();//a chaque frame on lance la fonction qui check la veleur du slider
         }
@@ -73,8 +82,10 @@ public class SliderLever : MonoBehaviour
         }
         
     }
+
     IEnumerator limitTime()
     {
+<<<<<<< HEAD
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
@@ -82,10 +93,25 @@ public class SliderLever : MonoBehaviour
             Debug.Log("mort par slider lever");
         }
         else
+=======
+        while (i > 0)
+>>>>>>> kevin/testGameplay
         {
-            Debug.Log("task good");
+            if (!isToActivate)
+            {
+                i = timeBeforeGameOver;
+                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+            }
+            else
+            {
+                i--;
+                yield return new WaitForSeconds(1);
+            }
         }
-       
+
+        Debug.Log("mort par bouton slider");
+        GameManager.instance.loose = true;
+        GameTimer.playing = false;
     }
-    
+
 }

@@ -738,6 +738,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 255493765}
     m_Modifications:
+    - target: {fileID: 8095621493274628657, guid: 13675040f5ebe0d4dab4201b695684c3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095621493274628657, guid: 13675040f5ebe0d4dab4201b695684c3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095621493274628657, guid: 13675040f5ebe0d4dab4201b695684c3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8095621493274628659, guid: 13675040f5ebe0d4dab4201b695684c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -22233,6 +22245,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 255493765}
     m_Modifications:
+    - target: {fileID: 4904591913319625164, guid: 9c2c119f194838a448f248063ab54db2, type: 3}
+      propertyPath: timeBeforeGameOver
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4904591913319625166, guid: 9c2c119f194838a448f248063ab54db2, type: 3}
       propertyPath: m_Name
       value: 2PRESS
