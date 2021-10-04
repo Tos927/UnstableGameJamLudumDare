@@ -11336,7 +11336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d3fb6df813388f46a3e0b776faab34a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14c582bee3bb684086ffe5b97fd462f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11371,7 +11371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &617797166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11649,7 +11649,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d3fb6df813388f46a3e0b776faab34a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14c582bee3bb684086ffe5b97fd462f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21874,6 +21874,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 255493765}
     m_Modifications:
+    - target: {fileID: 1600530098746831677, guid: 512bced50d525874b81dbc6d46715b34, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b14c582bee3bb684086ffe5b97fd462f, type: 3}
     - target: {fileID: 1600530098779341417, guid: 512bced50d525874b81dbc6d46715b34, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21970,6 +21974,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextGameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 1600530099421515929, guid: 512bced50d525874b81dbc6d46715b34, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b14c582bee3bb684086ffe5b97fd462f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512bced50d525874b81dbc6d46715b34, type: 3}
 --- !u!1 &1018566013
@@ -22087,7 +22095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d3fb6df813388f46a3e0b776faab34a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14c582bee3bb684086ffe5b97fd462f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34050,7 +34058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d3fb6df813388f46a3e0b776faab34a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14c582bee3bb684086ffe5b97fd462f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38979,8 +38987,8 @@ RectTransform:
   m_Father: {fileID: 1651703581}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -44011,7 +44019,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
