@@ -300,9 +300,9 @@ MonoBehaviour:
   max: 10
   min: 0
   backgroudnSlider: {fileID: 1095166671669913256}
-  sliderAtMax: {fileID: 21300000, guid: a8b1a7cfa94e82d48b47d3283ab62da2, type: 3}
-  sliderAtMid: {fileID: 21300000, guid: 1c7fae52bef7a6d41b20b2c315c828a5, type: 3}
-  sliderAtMin: {fileID: 21300000, guid: 6e8c140861c445e43b0b0d0d9fa94417, type: 3}
+  sliderAtMax: {fileID: 21300000, guid: a6e8d128081f0504ba66054fbc4a95a4, type: 3}
+  sliderAtMid: {fileID: 21300000, guid: 1d19056b26aabc94f831b3f3d4ae25c6, type: 3}
+  sliderAtMin: {fileID: 21300000, guid: 256bb13a1172e20499990594350bacf9, type: 3}
   timeBeforeGameOver: 8
 --- !u!1 &1095166673053520103
 GameObject:
