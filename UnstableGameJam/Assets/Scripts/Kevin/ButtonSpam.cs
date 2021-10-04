@@ -16,23 +16,29 @@ public class ButtonSpam : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 5;
+    private int timeBeforeGameOver = 4;
+
+    //Time Before death dans while
+    private int i = 4;
 
     private void Start()
     {
         diod.sprite = workingLED;
+
+        i = timeBeforeGameOver;
+
+        StartCoroutine(limitTime());
     }
 
     void Update()
     {
+
         if (isToActivate)
         {
             if (diod.sprite == workingLED)
             {
                 diod.sprite = errorLED;
                 spamNumbers = 5;
-
-                StartCoroutine(limitTime());
             }
         }
     }
@@ -52,11 +58,32 @@ public class ButtonSpam : MonoBehaviour
         }
         else
         {
-            Debug.Log("mort par boutton spam");
+            Debug.Log("mort par bouton spam");
         }
     }
 
     IEnumerator limitTime()
+    {
+        while (i > 0)
+        {
+            if (!isToActivate)
+            {
+                i = timeBeforeGameOver;
+                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+            }
+            else
+            {
+                i--;
+                yield return new WaitForSeconds(1);
+            }
+        }
+
+        Debug.Log("mort par bouton spam");
+        GameManager.instance.loose = true;
+        GameTimer.playing = false;
+    }
+
+    /*IEnumerator limitTime()
     {
         yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
@@ -69,5 +96,5 @@ public class ButtonSpam : MonoBehaviour
         {
             Debug.Log("task good!");
         }
-    }
+    }*/
 }
