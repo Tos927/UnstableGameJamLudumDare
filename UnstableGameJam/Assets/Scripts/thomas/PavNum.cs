@@ -13,7 +13,10 @@ public class PavNum : MonoBehaviour
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
+    public int timeBeforeGameOver = 20;
     
+
+
     void Start()
     {
         nextButton = 0;
@@ -76,7 +79,7 @@ public class PavNum : MonoBehaviour
 
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
             Debug.Log("mort par pavnume");

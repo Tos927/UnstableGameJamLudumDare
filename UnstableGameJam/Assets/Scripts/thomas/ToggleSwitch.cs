@@ -13,7 +13,7 @@ public class ToggleSwitch : MonoBehaviour
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
-
+    public int timeBeforeGameOver = 20;
 
     void Start()
     {
@@ -66,7 +66,7 @@ public class ToggleSwitch : MonoBehaviour
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(timeBeforeGameOver);
         if (isToActivate)
         {
             Debug.Log("mort par switch");
