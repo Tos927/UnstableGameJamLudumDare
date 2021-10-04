@@ -231,7 +231,10 @@ MonoBehaviour:
   led: {fileID: 6143073973511137655}
   greenLed: {fileID: 21300000, guid: 7493609bf6b6e934784e5d5ef7f301d2, type: 3}
   redLed: {fileID: 21300000, guid: 9c71e4a4d1391f24589a9d6edfb048bc, type: 3}
-  maxToReach: 10
+  target: 0
+  max: 10
+  min: 0
+  timeBeforeGameOver: 8
 --- !u!1 &6143073973417866745
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 666, y: 130.93}
+  m_AnchoredPosition: {x: 673, y: 127}
   m_SizeDelta: {x: 309.2488, y: 191.8654}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6143073973511137652

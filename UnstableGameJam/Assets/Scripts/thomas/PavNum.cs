@@ -15,7 +15,7 @@ public class PavNum : MonoBehaviour
     public Sprite greenLed;
 
     [SerializeField]
-    private int timeBeforeGameOver = 10;
+    private int timeBeforeGameOver = 15;
 
     //Time Before death dans while
     private int i = 10;
