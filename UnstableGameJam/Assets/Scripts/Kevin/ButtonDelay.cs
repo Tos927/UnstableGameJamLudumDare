@@ -26,10 +26,15 @@ public class ButtonDelay : MonoBehaviour
 
     private int i = 11;
 
+    private AudioSource audioSource;
+    public AudioClip pressed;
+    //public AudioClip wait;
+    public AudioClip canBePressedAgain;
+
     private void Start()
     {
         diod.sprite = workingLED;
-
+        audioSource = GetComponent<AudioSource>();
         i = timeBeforeGameOver;
 
         StartCoroutine(limitTime());
@@ -53,6 +58,7 @@ public class ButtonDelay : MonoBehaviour
             if (!isActive && (diod.sprite == errorLED || diod.sprite == waitingDiode))
             {
                 isActive = true;
+                audioSource.PlayOneShot(pressed);
                 StartCoroutine(Press2Times());
             }
         }
@@ -72,6 +78,9 @@ public class ButtonDelay : MonoBehaviour
 
             isActive = false;
             isToActivate = false;
+            
+            
+            
         }
         else
         {
@@ -79,7 +88,7 @@ public class ButtonDelay : MonoBehaviour
             yield return new WaitForSeconds(5f);
             diod.sprite = errorLED;
             secondPress = true;
-
+            audioSource.PlayOneShot(canBePressedAgain);
             isActive = false;
         }
     }

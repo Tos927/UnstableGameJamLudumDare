@@ -31,12 +31,18 @@ public class SliderLever : MonoBehaviour
     private void Start()
     {
         target = max;//met la target au max
-
+        audioSource = GetComponent<AudioSource>();
         i = timeBeforeGameOver;
 
         StartCoroutine(limitTime());
     }
 
+    private AudioSource audioSource;
+    public AudioClip pressed;
+
+
+
+    
     private void Update()
     {
         sliderNumber = sliderLever.value;//attribue la valeur du slide a chaque frames
@@ -64,7 +70,7 @@ public class SliderLever : MonoBehaviour
     {
         if (sliderNumber == target)//si la valeur du slider est égal a la target alors c'est bon 
         {
-
+            audioSource.PlayOneShot(pressed);
             isToActivate = false;
             Debug.Log("c'est bon?");
         }
