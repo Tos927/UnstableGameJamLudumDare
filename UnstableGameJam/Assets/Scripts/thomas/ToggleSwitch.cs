@@ -15,6 +15,9 @@ public class ToggleSwitch : MonoBehaviour
     public Sprite redLed;
     public Sprite greenLed;
 
+    private AudioSource audioSource;
+    public AudioClip pressed;
+
     [SerializeField]
     private int timeBeforeGameOver = 8;
 
@@ -24,7 +27,7 @@ public class ToggleSwitch : MonoBehaviour
     void Start()
     {
         i = timeBeforeGameOver;
-
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(limitTime());
     }
 
@@ -46,6 +49,7 @@ public class ToggleSwitch : MonoBehaviour
     }
     public void onSwitchButtonClicked()
     {
+        audioSource.PlayOneShot(pressed);
         if (isToActivate)
         {
             if (switchState == 1)
