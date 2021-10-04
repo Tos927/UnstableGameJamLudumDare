@@ -5,11 +5,15 @@ public class MainMenu : MonoBehaviour
 {
     public string levelToLoad;
 
+    public AudioSource audioSource;
+    public AudioClip pressed;
+
     public GameObject settingsWindow;
 
     public void StartGame()
     {
         SceneManager.LoadScene(levelToLoad);
+        audioSource.PlayOneShot(pressed);
     }
 
     public void SettingsButton()
