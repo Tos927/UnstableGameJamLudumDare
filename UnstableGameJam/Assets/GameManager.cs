@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject sliderOnNumber;
     public GameObject sliderlever;
 
-    
+    public float CheckingTimeSpeed = 0.25f;
 
     public bool[] tabl;
     public int randomIndex = -1;
@@ -27,14 +27,14 @@ public class GameManager : MonoBehaviour
     public bool loose;
     void Start()
     {
-        
+
         if (instance != null)
         {
             Debug.Log("il y a plus de une instance de Game manager");
             return;
 
         }
-        
+
         instance = this;
         randomIndex = -1;
     }
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
-        if(loose)
+        if (loose)
         {
             gameOverScreen.SetActive(true);
             Debug.Log("perdu__________________");
@@ -92,12 +92,11 @@ public class GameManager : MonoBehaviour
     }
     void RandIndex()
     {
-       
+
         randomIndex = Random.Range(0, 7);
-        
+
         Debug.Log(randomIndex);
         //tabl[randomIndex] = true;
-        
     }
-
 }
+

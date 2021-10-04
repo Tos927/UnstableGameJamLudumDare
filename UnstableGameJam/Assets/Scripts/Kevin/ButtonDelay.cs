@@ -17,27 +17,31 @@ public class ButtonDelay : MonoBehaviour
     [SerializeField]
     private Image diod;
 
-    [SerializeField]
-    private int timeBeforeGameOver = 15;
-
     private bool isActive = false;
 
     private bool secondPress = false;
 
+    [SerializeField]
+    private int timeBeforeGameOver = 11;
+
+    private int i = 11;
+
     private void Start()
     {
         diod.sprite = workingLED;
+
+        i = timeBeforeGameOver;
+
+        StartCoroutine(limitTime());
     }
 
     void Update()
     {
         if (isToActivate)
         {
-            if(diod.sprite == workingLED)
+            if (diod.sprite == workingLED)
             {
                 diod.sprite = errorLED;
-
-                StartCoroutine(limitTime());
             }
         }
     }
@@ -52,7 +56,7 @@ public class ButtonDelay : MonoBehaviour
                 StartCoroutine(Press2Times());
             }
         }
-        else   
+        else
         {
             GameManager.instance.loose = true;
             Debug.Log("mort par bouton delay");
@@ -82,16 +86,22 @@ public class ButtonDelay : MonoBehaviour
 
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(timeBeforeGameOver);
-        if (isToActivate)
+        while (i > 0)
         {
-            Debug.Log("mort par bouton delay");
-            GameManager.instance.loose = true;
-            GameTimer.playing = false;
+            if (!isToActivate)
+            {
+                i = timeBeforeGameOver;
+                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+            }
+            else
+            {
+                i--;
+                yield return new WaitForSeconds(1);
+            }
         }
-        else
-        {
-            Debug.Log("task good!");
-        }
+
+        Debug.Log("mort par bouton delay");
+        GameManager.instance.loose = true;
+        GameTimer.playing = false;
     }
 }

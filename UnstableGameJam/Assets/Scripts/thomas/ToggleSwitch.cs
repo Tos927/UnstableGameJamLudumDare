@@ -13,11 +13,18 @@ public class ToggleSwitch : MonoBehaviour
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
-    public int timeBeforeGameOver = 20;
+
+    [SerializeField]
+    private int timeBeforeGameOver = 5;
+
+    //Time Before death dans while
+    private int i = 5;
 
     void Start()
     {
-        
+        i = timeBeforeGameOver;
+
+        StartCoroutine(limitTime());
     }
 
     void Update()
@@ -27,7 +34,6 @@ public class ToggleSwitch : MonoBehaviour
             if (led.GetComponent<Image>().sprite = greenLed)
             {
                 led.GetComponent<Image>().sprite = redLed;
-                StartCoroutine(limitTime());
                 Debug.Log("led en rouge ");
             }
         }
@@ -36,27 +42,25 @@ public class ToggleSwitch : MonoBehaviour
             led.GetComponent<Image>().sprite = greenLed;
             Debug.Log("led en vert ");
         }
-
-
     }
     public void onSwitchButtonClicked()
     {
         if (isToActivate)
         {
             if (switchState == 1)
-                    {
-                        switchState =2;
-                        Debug.Log("switch state est égale a 2");
-                        switchBtn.GetComponent<Image>().sprite = pressed1;
-                        isToActivate = false;
-                    }
-                    else
-                    {
-                        switchState = 1;
-                        Debug.Log("switch state est égale a 1");
-                        switchBtn.GetComponent<Image>().sprite = null;
-                        isToActivate = false;
-                    }
+            {
+                switchState = 2;
+                Debug.Log("switch state est égale a 2");
+                switchBtn.GetComponent<Image>().sprite = pressed1;
+                isToActivate = false;
+            }
+            else
+            {
+                switchState = 1;
+                Debug.Log("switch state est égale a 1");
+                switchBtn.GetComponent<Image>().sprite = null;
+                isToActivate = false;
+            }
         }
         else
         {
@@ -66,20 +70,22 @@ public class ToggleSwitch : MonoBehaviour
     }
     IEnumerator limitTime()
     {
-        yield return new WaitForSeconds(timeBeforeGameOver);
-        if (isToActivate)
+        while (i > 0)
         {
-            Debug.Log("mort par switch");
-            GameManager.instance.loose = true;
+            if (!isToActivate)
+            {
+                i = timeBeforeGameOver;
+                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+            }
+            else
+            {
+                i--;
+                yield return new WaitForSeconds(1);
+            }
+        }
 
-        }
-        else
-        {
-            Debug.Log("task good!");
-            
-        }
+        Debug.Log("mort par bouton toggle twitch");
+        GameManager.instance.loose = true;
+        GameTimer.playing = false;
     }
-
-
-
 }
