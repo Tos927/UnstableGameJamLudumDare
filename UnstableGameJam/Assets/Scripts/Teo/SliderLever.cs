@@ -17,8 +17,13 @@ public class SliderLever : MonoBehaviour
     public float max = 10;
     public float min = 0;
 
+    public GameObject backgroudnSlider;
+
+    public Sprite sliderAtMax;
+    public Sprite sliderAtMid;
+    public Sprite sliderAtMin;
     [SerializeField]
-    private int timeBeforeGameOver = 5;
+    private int timeBeforeGameOver = 8;
 
     //Time Before death dans while
     private int i = 5;
@@ -59,20 +64,26 @@ public class SliderLever : MonoBehaviour
     {
         if (sliderNumber == target)//si la valeur du slider est égal a la target alors c'est bon 
         {
+
             isToActivate = false;
             Debug.Log("c'est bon?");
         }
         if (sliderNumber == max)//si le slider est deja sur la valeur la plus petite alors on luis dit d'aller sur 0
         {
+            backgroudnSlider.GetComponent<Image>().sprite = sliderAtMax;
             target = min;
             Debug.Log("min min");
         }
         else if (sliderNumber == min)//si le slider est deja sur la valeur la plus grande alors on luis dit d'aller sur 10
         {
+            backgroudnSlider.GetComponent<Image>().sprite = sliderAtMin;
             target = max;
             Debug.Log("max max");
         }
-
+        if(sliderNumber == 5)
+        {
+            backgroudnSlider.GetComponent<Image>().sprite = sliderAtMid;
+        }
     }
 
     IEnumerator limitTime()

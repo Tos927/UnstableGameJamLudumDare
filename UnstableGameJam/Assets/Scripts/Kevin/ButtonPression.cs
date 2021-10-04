@@ -16,8 +16,10 @@ public class ButtonPression : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 5;
+    private int timeBeforeGameOver = 8;
 
+    //public Sprite sprite;
+    //public Sprite pressedSprite;
     //Time Before death dans while
     private int i = 5;
 
@@ -43,11 +45,13 @@ public class ButtonPression : MonoBehaviour
 
     public void ButtonToPress()
     {
+        //this.GetComponent<Image>().sprite = pressedSprite;
+
         if (isToActivate && diod.sprite == errorLED)
         {
 
             diod.sprite = workingLED;
-
+            //this.GetComponent<Image>().sprite = sprite;
             isToActivate = false;
         }
         else

@@ -5,20 +5,21 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class ToggleSwitch : MonoBehaviour
 {
-
+    
     public bool isToActivate;
     public int switchState = 1;
     public GameObject switchBtn;
+    public Sprite switchSprite;
     public Sprite pressed1;
     public GameObject led;
     public Sprite redLed;
     public Sprite greenLed;
 
     [SerializeField]
-    private int timeBeforeGameOver = 5;
+    private int timeBeforeGameOver = 8;
 
     //Time Before death dans while
-    private int i = 5;
+    private int i;
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class ToggleSwitch : MonoBehaviour
             {
                 switchState = 1;
                 Debug.Log("switch state est égale a 1");
-                switchBtn.GetComponent<Image>().sprite = null;
+                switchBtn.GetComponent<Image>().sprite = switchSprite;
                 isToActivate = false;
             }
         }
