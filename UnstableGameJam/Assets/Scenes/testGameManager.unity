@@ -1583,8 +1583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a85e6d3e5cd19047bcf23cfa5bad3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: {fileID: 951501044}
-  bestScoreText: {fileID: 5786970224280760573}
+  gameTimer: {fileID: 0}
+  bestScoreText: {fileID: 0}
   scoreText: 00:00:00
 --- !u!4 &509735019
 Transform:
@@ -22226,17 +22226,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5786970225275526964, guid: fc90f73a5e41f084b9c040d5f6b860ab, type: 3}
   m_PrefabInstance: {fileID: 92258964}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &951501044 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5786970225275526966, guid: fc90f73a5e41f084b9c040d5f6b860ab, type: 3}
-  m_PrefabInstance: {fileID: 92258964}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccea3a7adba9d364185d03837e01ab87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &992676026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1600530098779341422, guid: 512bced50d525874b81dbc6d46715b34, type: 3}
@@ -29162,7 +29151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a816aabaf6f57341a2c2f7dcbd85fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 
+  levelToLoad: MainMenu
   pauseMenuUI: {fileID: 1750150526}
 --- !u!114 &1622812218
 MonoBehaviour:
@@ -29191,7 +29180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540e02eef54cb5a4c9807b04da80c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 
+  levelToLoad: MainMenu
   settingsWindow: {fileID: 617797165}
 --- !u!1 &1637959824
 GameObject:
