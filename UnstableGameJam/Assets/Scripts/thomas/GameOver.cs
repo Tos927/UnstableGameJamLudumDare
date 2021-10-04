@@ -12,5 +12,7 @@ public class GameOver : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        ScoreManager.instance.SetBestScore();
+        GameTimer.playing = true;
     }
 }
