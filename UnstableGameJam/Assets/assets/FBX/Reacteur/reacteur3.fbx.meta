@@ -3,7 +3,137 @@ guid: 0a34170642e726a4dbd35e5edf18ac7d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: aff24d840ddfdeb4b91570265ed34d56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 55e001a0f5ccc8043b0b9ab7a937c727, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuyau
+    second: {fileID: 2100000, guid: 49f42a42f9817064a81505b542d409bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grillage
+    second: {fileID: 2100000, guid: a7b82734da7db3f43be124263ba71ed9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nuclear
+    second: {fileID: 2100000, guid: 753857edae625684e86587e077e5ff35, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal029_1K_Color
+    second: {fileID: 2800000, guid: 7d5b181dd7d40864985c8e860824fe58, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal029_1K_Metalness
+    second: {fileID: 2800000, guid: 16b4653888fc9cf44ab09a2195a940c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal029_1K_NormalDX
+    second: {fileID: 2800000, guid: ae1f0bc556ddfc04e91fc214669b9ca8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal029_1K_Roughness
+    second: {fileID: 2800000, guid: e44cba415701b614ea2a41fa66da2e38, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalPlates007_2K_Color
+    second: {fileID: 2800000, guid: 52ce6d5610ffc6846a784ad66fae0129, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalPlates007_2K_Metalness
+    second: {fileID: 2800000, guid: d614a8c604186034da4e16688b10be7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalPlates007_2K_NormalDX
+    second: {fileID: 2800000, guid: fa9d553e2ecc1084ca05939dfafa1e38, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalPlates007_2K_Roughness
+    second: {fileID: 2800000, guid: 1d69939812a47424d840bcf58c2f395d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalWalkway011_1K_Color
+    second: {fileID: 2800000, guid: 44e5c5ab841dd984cac5e2399eaaf538, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalWalkway011_1K_Metalness
+    second: {fileID: 2800000, guid: 7b6f922fd3fe6dc45b109f0c6926b71a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalWalkway011_1K_NormalDX
+    second: {fileID: 2800000, guid: 1e748e1bc8c6ba4448cec30835a7aac6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalWalkway011_1K_Opacity
+    second: {fileID: 2800000, guid: e8be3b29c8b5da241b7ea87602d250cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalWalkway011_1K_Roughness
+    second: {fileID: 2800000, guid: 9f42cb5a7a1dbc5438142d4034d9708f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pipe004_1K_Color
+    second: {fileID: 2800000, guid: 11a896d35a17b87418cf54a009eed2c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pipe004_1K_Metalness
+    second: {fileID: 2800000, guid: 1fd4f41b413d61d479be9ede48d7e425, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pipe004_1K_NormalDX
+    second: {fileID: 2800000, guid: 882e1f4b592adaf4db9e86969541d719, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pipe004_1K_Roughness
+    second: {fileID: 2800000, guid: dcf1ba79ac113b74db4b20ef9f57f3dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sign007_1K_Color
+    second: {fileID: 2800000, guid: 4a44f5b6ddf2d924c9ee35d6915659ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sign007_1K_Metallness
+    second: {fileID: 2800000, guid: 3fb49b8d679b7234297e328b0aee68b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sign007_1K_NormalDX
+    second: {fileID: 2800000, guid: e55c5b6f09a5e7045a1b7c489ab921d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sign007_1K_Roughness
+    second: {fileID: 2800000, guid: b4c7e2f28c647484382d68c12fade1f8, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
