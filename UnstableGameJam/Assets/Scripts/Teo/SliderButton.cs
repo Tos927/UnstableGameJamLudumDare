@@ -21,7 +21,7 @@ public class SliderButton : MonoBehaviour
     private bool processing = false;
 
     [SerializeField]
-    private int timeBeforeGameOver = 5;
+    private int timeBeforeGameOver = 8;
 
     //Time Before death dans while
     private int i = 5;

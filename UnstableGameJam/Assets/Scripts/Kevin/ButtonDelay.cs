@@ -22,7 +22,7 @@ public class ButtonDelay : MonoBehaviour
     private bool secondPress = false;
 
     [SerializeField]
-    private int timeBeforeGameOver = 11;
+    private int timeBeforeGameOver = 15;
 
     private int i = 11;
 

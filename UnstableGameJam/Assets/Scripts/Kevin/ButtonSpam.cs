@@ -16,7 +16,7 @@ public class ButtonSpam : MonoBehaviour
     private Image diod;
 
     [SerializeField]
-    private int timeBeforeGameOver = 4;
+    private int timeBeforeGameOver = 8;
 
     //Time Before death dans while
     private int i = 4;

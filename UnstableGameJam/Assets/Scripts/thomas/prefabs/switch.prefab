@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 166.3869, y: 422.9361}
+  m_AnchoredPosition: {x: 72, y: -8.0422}
+  m_SizeDelta: {x: 358.8032, y: 422.9361}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5039502752779144371
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7650ed173f258454b91c48429cd80935, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -189,10 +189,11 @@ MonoBehaviour:
   isToActivate: 1
   switchState: 1
   switchBtn: {fileID: 5039502753930154266}
-  pressed1: {fileID: 21300000, guid: c8b45d76e6c8c5246a238ce45a2116b0, type: 3}
+  pressed1: {fileID: 21300000, guid: 69a6245c58c87d344a36eb26e7df4971, type: 3}
   led: {fileID: 5039502753510218153}
   redLed: {fileID: 21300000, guid: 3eae2f50f606ae046aa311ebc1497e31, type: 3}
   greenLed: {fileID: 21300000, guid: f8bde5eab5e9d224e981b5f5efc392f7, type: 3}
+  timeBeforeGameOver: 8
 --- !u!1 &5039502753510218153
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039502753574262428}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -380,8 +381,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00025558, y: 0.00088501}
-  m_SizeDelta: {x: 166.39, y: 422.94}
+  m_AnchoredPosition: {x: -2.6135, y: 0.0009}
+  m_SizeDelta: {x: 353.58, y: 422.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5039502753930154270
 CanvasRenderer:
@@ -398,7 +399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039502753930154266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

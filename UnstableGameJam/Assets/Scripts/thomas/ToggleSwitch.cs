@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class ToggleSwitch : MonoBehaviour
 {
-
+    
     public bool isToActivate;
     public int switchState = 1;
     public GameObject switchBtn;
@@ -15,10 +15,10 @@ public class ToggleSwitch : MonoBehaviour
     public Sprite greenLed;
 
     [SerializeField]
-    private int timeBeforeGameOver = 5;
+    private int timeBeforeGameOver = 8;
 
     //Time Before death dans while
-    private int i = 5;
+    private int i;
 
     void Start()
     {
