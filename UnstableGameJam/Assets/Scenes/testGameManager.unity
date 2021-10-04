@@ -29510,6 +29510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c7e4741d6e94c4bb50197eed2bc602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1622812220}
+  pressed: {fileID: 8300000, guid: 5526d428120bef74ca5c43780cf2a08b, type: 3}
   gameOverScreen: {fileID: 992676026}
   pressButton: {fileID: 518431540}
   spamPressButton: {fileID: 2018631410}
@@ -29579,6 +29581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: MainMenu
+  audioSource: {fileID: 0}
+  pressed: {fileID: 0}
   settingsWindow: {fileID: 617797165}
 --- !u!82 &1622812220
 AudioSource:
@@ -29589,7 +29593,7 @@ AudioSource:
   m_GameObject: {fileID: 1622812214}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1c91ea37b620b3c4f968fb96b3e003ea, type: 2}
   m_audioClip: {fileID: 8300000, guid: e74e86d5f6fc20b4399c7da571ae49fa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.334
