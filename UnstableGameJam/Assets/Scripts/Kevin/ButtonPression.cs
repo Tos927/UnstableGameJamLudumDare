@@ -18,6 +18,8 @@ public class ButtonPression : MonoBehaviour
     [SerializeField]
     private int timeBeforeGameOver = 8;
 
+    private AudioSource audioSource;
+    public AudioClip pressed;
     //public Sprite sprite;
     //public Sprite pressedSprite;
     //Time Before death dans while
@@ -26,7 +28,7 @@ public class ButtonPression : MonoBehaviour
     private void Start()
     {
         diod.sprite = workingLED;
-
+        audioSource = GetComponent<AudioSource>();
         i = timeBeforeGameOver;
 
         StartCoroutine(limitTime());
@@ -49,7 +51,7 @@ public class ButtonPression : MonoBehaviour
 
         if (isToActivate && diod.sprite == errorLED)
         {
-
+            audioSource.PlayOneShot(pressed);
             diod.sprite = workingLED;
             //this.GetComponent<Image>().sprite = sprite;
             isToActivate = false;

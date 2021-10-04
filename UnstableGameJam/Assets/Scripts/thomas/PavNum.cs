@@ -14,6 +14,11 @@ public class PavNum : MonoBehaviour
     public Sprite redLed;
     public Sprite greenLed;
 
+    public AudioClip presseSound;
+    public AudioClip fail;
+    private AudioSource audioSource;
+
+
     [SerializeField]
     private int timeBeforeGameOver = 15;
 
@@ -22,6 +27,7 @@ public class PavNum : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         nextButton = 0;
         randomize();
 
@@ -46,16 +52,19 @@ public class PavNum : MonoBehaviour
             {
                 nextButton++;
                 Debug.Log("button suivant" + nextButton);
+                audioSource.PlayOneShot(presseSound);
             }
             else
             {
                 nextButton = 0;
+                audioSource.PlayOneShot(fail);
                 randomize();
             }
             if (button == 7)
             {
                 nextButton = 0;
                 Debug.Log("taskgood");
+                
                 randomize();
                 isToActivate = false;
             }

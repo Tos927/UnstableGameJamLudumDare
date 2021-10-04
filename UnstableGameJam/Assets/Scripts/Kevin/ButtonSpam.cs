@@ -18,13 +18,15 @@ public class ButtonSpam : MonoBehaviour
     [SerializeField]
     private int timeBeforeGameOver = 8;
 
+    private AudioSource audioSource;
+    public AudioClip pressed;
     //Time Before death dans while
     private int i = 4;
 
     private void Start()
     {
         diod.sprite = workingLED;
-
+        audioSource=GetComponent<AudioSource>();
         i = timeBeforeGameOver;
 
         StartCoroutine(limitTime());
@@ -46,6 +48,7 @@ public class ButtonSpam : MonoBehaviour
     private int spamNumbers = 5;
     public void ButtonToSpam()
     {
+        audioSource.PlayOneShot(pressed);
         if (isToActivate)
         {
             spamNumbers--;
