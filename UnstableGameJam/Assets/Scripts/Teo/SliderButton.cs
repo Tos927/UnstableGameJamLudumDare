@@ -23,11 +23,14 @@ public class SliderButton : MonoBehaviour
     [SerializeField]
     private int timeBeforeGameOver = 8;
 
+    private AudioSource audioSource;
+    public AudioClip pressed;
     //Time Before death dans while
     private int i = 5;
 
     public void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Debug.Log(rdmNumber);
         randomText.text = "0";
 
@@ -86,11 +89,13 @@ public class SliderButton : MonoBehaviour
 
             if (waitSeconds)
             {
+                audioSource.PlayOneShot(pressed);
                 isToActivate = false;
                 waitSeconds = false;
                 processing = false;
                 sliderButton.value = 0;
                 rdmNumber = 0;
+                
                 Debug.Log("Gagner !");
             }
         }
