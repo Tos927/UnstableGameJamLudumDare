@@ -24,6 +24,8 @@ public class ButtonDelay : MonoBehaviour
 
     private bool secondPress = false;
 
+    public Sprite pressedSprite;
+
     private void Start()
     {
         diod.sprite = workingLED;
@@ -44,6 +46,7 @@ public class ButtonDelay : MonoBehaviour
 
     public void ButtonToPress2Times()
     {
+        this.GetComponent<Image>().sprite = pressedSprite;
         if (isToActivate)
         {
             if (!isActive && (diod.sprite == errorLED || diod.sprite == waitingDiode))
