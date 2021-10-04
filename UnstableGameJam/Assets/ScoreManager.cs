@@ -17,6 +17,9 @@ public class ScoreManager : MonoBehaviour
     //Don't change this
     public string scoreText = "00:00:00";
 
+    public float previousScore =0f;
+    public float bestScore = 0f;
+
     private void Awake()
     {
         if (instance != null)
@@ -33,6 +36,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        
         // Fetch Timer (middle) and Scoring (top/right)
         if (gameTimer == null)
         {
@@ -52,9 +56,13 @@ public class ScoreManager : MonoBehaviour
 
     public void SetBestScore()
     {
-        scoreText = gameTimer.GetComponent<GameTimer>().TimerText.text;
+        previousScore = gameTimer.GetComponent<GameTimer>().score;
 
-        Debug.Log("SetBestScore");
+        if (previousScore > bestScore)
+        {
+            scoreText = gameTimer.GetComponent<GameTimer>().TimerText.text;
+            bestScore = previousScore;
+        }
     }
 
 }
