@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
-
+    public string levelToLoad;
     public GameObject pauseMenuUI;
 
     public void Start()
@@ -44,18 +44,10 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
     }
 
-    public void Restart()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1;
-        gameIsPaused = false;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void loadMainMenu()
     {
         Resume();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(levelToLoad);
         //AudioManager.instance.Play("BgMusic");
         //AudioManager.instance.Stop("MenuMusic");
     }
