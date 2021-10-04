@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject sliderOnNumber;
     public GameObject sliderlever;
 
-    public float CheckingTimeSpeed = 0.25f;
+   
 
     public bool[] tabl;
     public int randomIndex = -1;

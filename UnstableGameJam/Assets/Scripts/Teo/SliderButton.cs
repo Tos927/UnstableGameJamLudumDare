@@ -20,6 +20,8 @@ public class SliderButton : MonoBehaviour
     private bool waitSeconds = false;
     private bool processing = false;
 
+    
+
     [SerializeField]
     private int timeBeforeGameOver = 5;
 
@@ -114,7 +116,7 @@ public class SliderButton : MonoBehaviour
             if (!isToActivate)
             {
                 i = timeBeforeGameOver;
-                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+                yield return new WaitForSeconds(0.25f);
             }
             else
             {
