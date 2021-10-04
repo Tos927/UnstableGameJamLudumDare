@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverScreen;
 
-
-
     public static GameManager instance;
     public GameObject pressButton;
     public GameObject spamPressButton;
@@ -17,8 +15,6 @@ public class GameManager : MonoBehaviour
     public GameObject switchPress;
     public GameObject sliderOnNumber;
     public GameObject sliderlever;
-
-    public float CheckingTimeSpeed = 0.25f;
 
     public bool[] tabl;
     public int randomIndex = -1;

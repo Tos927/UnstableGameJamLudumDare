@@ -114,7 +114,7 @@ public class SliderButton : MonoBehaviour
             if (!isToActivate)
             {
                 i = timeBeforeGameOver;
-                yield return new WaitForSeconds(GameManager.instance.CheckingTimeSpeed);
+                yield return new WaitForSeconds(0.25f);
             }
             else
             {
